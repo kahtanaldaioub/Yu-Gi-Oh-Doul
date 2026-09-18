@@ -1,0 +1,32 @@
+/* ===== RESET & BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a227;--gold-light:#e8c86a;--gold-deep:#8a6f2a;
+  --text-light:#f2ead5;--text-dim:#b8a888;
+  --danger:#a83a2c;--grave:#6a5a8a;
+  --arcane:#7a5cc4;--arcane-light:#b89aff;--ember:#e07a5a;
+  --anim-speed: 1;
+}
+html,body{height:100%;width:100%}
+body{
+  font-family:'Spectral',Georgia,serif;color:var(--text-light);
+  overflow:hidden;position:relative;background:#0a0508;
+}
+
+.home-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 200, 120, 0.4);
+  background: rgba(10, 2, 16, 0.75);
+  color: #f8c877;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.home-btn:hover {
+  background: rgba(255, 180, 100, 0.2);
+}

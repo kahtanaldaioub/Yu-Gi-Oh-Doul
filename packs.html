@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duel Field — Pack Opening</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;800&family=Spectral:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/background.css">
+<link rel="stylesheet" href="css/screens.css">
+<link rel="stylesheet" href="css/topbar.css">
+<link rel="stylesheet" href="css/pack.css">
+<link rel="stylesheet" href="css/overlays.css">
+<link rel="stylesheet" href="css/effects.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+
+<script src="js/00-sprite.js"></script>
+
+<div class="bg-scene"><img src="assets/background.svg" alt=""></div>
+<div class="bg-particles"><span></span><span></span><span></span><span></span><span></span></div>
+
+<div id="packScreen" class="screen active">
+  <div class="pack-wrap">
+    <div class="top-bar" style="margin-bottom:0">
+      <div class="top-title">📦 Pack Opening</div>
+      <div class="top-actions">
+        <button class="btn primary" id="pkDone" style="display:none">Collect All</button>
+        <button class="btn" id="pkBack">Back</button>
+      </div>
+    </div>
+    <div class="pack-intro" id="packIntro">Tap each card to reveal it.</div>
+    <div id="packCards"></div>
+  </div>
+</div>
+
+<div class="card-preview" id="cardPreview">
+  <img alt="">
+  <div class="cp-name"></div>
+  <div class="cp-stats"><span class="atk"></span><span class="def"></span></div>
+  <div class="cp-owned"></div>
+</div>
+
+<div id="settingsOverlay" aria-hidden="true">
+  <div class="settings-panel" role="dialog" aria-modal="true" aria-label="Settings">
+    <div class="settings-header">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#star"></use></svg> Settings</h2>
+      <button class="settings-close" type="button" aria-label="Close settings">×</button>
+    </div>
+    <div class="settings-tabs">
+      <button class="settings-tab active" type="button" data-tab="audio">Audio</button>
+      <button class="settings-tab" type="button" data-tab="visual">Visual</button>
+      <button class="settings-tab" type="button" data-tab="gameplay">Gameplay</button>
+    </div>
+    <div class="settings-body">
+      <div class="settings-tab-content active" data-tab="audio">
+        <div class="settings-group-title">Volume</div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">Master</div><div class="slr-desc">Main game volume</div></div><div class="settings-row-control"><div class="slider-wrap"><input type="range" min="0" max="100" value="50" data-setting="masterVolume"><span class="slider-value">50%</span></div></div></div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">SFX</div><div class="slr-desc">Card flips, attacks, and UI sounds</div></div><div class="settings-row-control"><div class="slider-wrap"><input type="range" min="0" max="100" value="85" data-setting="sfxVolume"><span class="slider-value">85%</span></div></div></div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">Ambient</div><div class="slr-desc">Background atmosphere</div></div><div class="settings-row-control"><div class="slider-wrap"><input type="range" min="0" max="100" value="75" data-setting="ambientVolume"><span class="slider-value">75%</span></div></div></div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">Mute</div><div class="slr-desc">Silence all audio</div></div><div class="settings-row-control"><div class="switch on" data-setting="muted" aria-checked="false" role="switch"></div></div></div>
+      </div>
+      <div class="settings-tab-content" data-tab="visual">
+        <div class="settings-group-title">Effects</div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">Hover preview</div><div class="slr-desc">Show the floating card preview</div></div><div class="settings-row-control"><div class="switch on" data-setting="hoverPreview" aria-checked="true" role="switch"></div></div></div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">Screen shake</div><div class="slr-desc">Camera shakes during attacks and impacts</div></div><div class="settings-row-control"><div class="switch on" data-setting="screenShake" aria-checked="true" role="switch"></div></div></div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">Particles</div><div class="slr-desc">Battle sparks and summon effects</div></div><div class="settings-row-control"><div class="switch on" data-setting="particles" aria-checked="true" role="switch"></div></div></div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">Background particles</div><div class="slr-desc">Ambient drifting particles in the scene</div></div><div class="settings-row-control"><div class="switch on" data-setting="bgParticles" aria-checked="true" role="switch"></div></div></div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">Holo shine</div><div class="slr-desc">Glossy card shine and highlights</div></div><div class="settings-row-control"><div class="switch on" data-setting="holoShine" aria-checked="true" role="switch"></div></div></div>
+      </div>
+      <div class="settings-tab-content" data-tab="gameplay">
+        <div class="settings-group-title">Animation</div>
+        <div class="settings-row"><div class="settings-row-label"><div class="slr-main">Animation speed</div><div class="slr-desc">Adjust tempo for battle and transition effects</div></div><div class="settings-row-control"><div class="segmented" aria-label="Animation speed"><button type="button" data-speed="fast">Fast</button><button type="button" data-speed="normal" class="active">Normal</button><button type="button" data-speed="relaxed">Relaxed</button></div></div></div>
+      </div>
+    </div>
+    <div class="settings-footer"><button class="btn danger" id="settingsReset" type="button">Reset</button><button class="btn primary" id="settingsDone" type="button">Done</button></div>
+  </div>
+</div>
+
+<script defer src="js/01-config.js?v=20260918-3"></script>
+
+<script defer src="js/02-state.js"></script>
+<script defer src="js/03-dom.js"></script>
+<script defer src="js/04-audio.js"></script>
+<script defer src="js/05-utils.js"></script>
+<script defer src="js/06-storage.js?v=20260918-2"></script>
+<script defer src="js/07-cards.js?v=20260918-2"></script>
+<script defer src="js/08-menu.js?v=20260918-2"></script>
+<script defer src="js/17-settings.js"></script>
+<script defer src="js/10-packs.js"></script>
+<script defer src="js/16-boot.js?v=20260918-2"></script>
+<script defer src="js/18-nav.js"></script>
+</body>
+</html>

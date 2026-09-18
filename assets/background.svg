@@ -1,0 +1,357 @@
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- ============ SKY ============ -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#04020a"/>
+      <stop offset="0.10" stop-color="#0d0620"/>
+      <stop offset="0.20" stop-color="#1b0a33"/>
+      <stop offset="0.30" stop-color="#2e1044"/>
+      <stop offset="0.40" stop-color="#4a174f"/>
+      <stop offset="0.50" stop-color="#6d2249"/>
+      <stop offset="0.58" stop-color="#94333f"/>
+      <stop offset="0.65" stop-color="#b94e37"/>
+      <stop offset="0.71" stop-color="#d9763a"/>
+      <stop offset="0.76" stop-color="#eea14e"/>
+      <stop offset="0.80" stop-color="#f8c877"/>
+      <stop offset="0.84" stop-color="#fce0a4"/>
+      <stop offset="0.88" stop-color="#fdeec6"/>
+      <stop offset="1"    stop-color="#fff6dd"/>
+    </linearGradient>
+
+    <!-- ============ SUN GLOW ============ -->
+    <radialGradient id="hazeWide" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#ffbe7c" stop-opacity="0.55"/>
+      <stop offset="0.32" stop-color="#ef8b46" stop-opacity="0.28"/>
+      <stop offset="0.66" stop-color="#b8483a" stop-opacity="0.09"/>
+      <stop offset="1"    stop-color="#8a2f3a" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="hazeCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#fff0c8" stop-opacity="0.95"/>
+      <stop offset="0.28" stop-color="#ffc478" stop-opacity="0.55"/>
+      <stop offset="0.62" stop-color="#e0743c" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#c0503a" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="sunCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#fffdf4"/>
+      <stop offset="0.45" stop-color="#fff4cd"/>
+      <stop offset="0.80" stop-color="#ffdb96"/>
+      <stop offset="1"    stop-color="#ffc06a" stop-opacity="0.9"/>
+    </radialGradient>
+
+    <radialGradient id="starGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="0.3" stop-color="#cfe0ff" stop-opacity="0.35"/>
+      <stop offset="1"   stop-color="#8fb0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ============ PYRAMIDS ============ -->
+    <linearGradient id="pyrNearA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#190616"/>
+      <stop offset="1" stop-color="#4a1526"/>
+    </linearGradient>
+    <linearGradient id="pyrNearB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#25091c"/>
+      <stop offset="1" stop-color="#5e2230"/>
+    </linearGradient>
+    <linearGradient id="pyrFarA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b2a3e"/>
+      <stop offset="1" stop-color="#a85a48"/>
+    </linearGradient>
+    <linearGradient id="pyrFarB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d3346"/>
+      <stop offset="1" stop-color="#bb6a50"/>
+    </linearGradient>
+
+    <!-- ============ RUINS ============ -->
+    <linearGradient id="ruinG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c0722"/>
+      <stop offset="1" stop-color="#0a020e"/>
+    </linearGradient>
+    <linearGradient id="goldTip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0c24e"/>
+      <stop offset="1" stop-color="#8a5a20"/>
+    </linearGradient>
+
+    <!-- ============ DUNES ============ -->
+    <linearGradient id="dune1G" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a2028"/>
+      <stop offset="1" stop-color="#24081a"/>
+    </linearGradient>
+    <linearGradient id="dune2G" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a0f1e"/>
+      <stop offset="1" stop-color="#150410"/>
+    </linearGradient>
+    <linearGradient id="dune3G" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e0614"/>
+      <stop offset="1" stop-color="#06010a"/>
+    </linearGradient>
+
+    <!-- ============ VIGNETTE ============ -->
+    <radialGradient id="vig" cx="0.5" cy="0.55" r="0.78">
+      <stop offset="0.35" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.72" stop-color="#0a0210" stop-opacity="0.30"/>
+      <stop offset="1"    stop-color="#050008" stop-opacity="0.68"/>
+    </radialGradient>
+
+    <!-- ============ FILTERS ============ -->
+    <filter id="blurS"  x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <filter id="blurM"  x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="blurL"  x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="24"/></filter>
+    <filter id="blurXL" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="46"/></filter>
+
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="3" stitchTiles="stitch" result="t"/>
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 0.55
+                0 0 0 0 0.48
+                0 0 0 0 0.42
+                0 0 0 0.42 0"/>
+    </filter>
+
+    <!-- ============ PALM SILHOUETTE ============ -->
+    <g id="palm" fill="#0a020e">
+      <path d="M-8,0 Q2,-120 -9,-232 L6,-237 Q17,-120 10,0 Z"/>
+      <path d="M-1,-234 Q-58,-288 -128,-284 Q-62,-266 -5,-228 Z"/>
+      <path d="M-1,-234 Q-24,-308 -36,-352 Q-4,-302 8,-232 Z"/>
+      <path d="M-1,-234 Q52,-300 112,-296 Q58,-268 5,-228 Z"/>
+      <path d="M-1,-234 Q84,-270 144,-248 Q88,-244 3,-226 Z"/>
+      <path d="M-1,-234 Q74,-198 122,-154 Q66,-194 -1,-226 Z"/>
+      <path d="M-1,-234 Q-84,-268 -150,-246 Q-88,-244 -4,-226 Z"/>
+      <path d="M-1,-234 Q-80,-206 -130,-162 Q-72,-198 -4,-226 Z"/>
+      <path d="M-1,-234 Q-16,-330 6,-380 Q20,-318 10,-232 Z"/>
+      <circle cx="-7" cy="-226" r="5"/>
+      <circle cx="5"  cy="-228" r="5"/>
+      <circle cx="0"  cy="-218" r="4.5"/>
+    </g>
+  </defs>
+
+  <!-- ==================== SKY ==================== -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- ==================== STARS ==================== -->
+  <g fill="#ffffff">
+    <circle cx="60"   cy="40"  r="1.4" opacity="0.90"/>
+    <circle cx="150"  cy="90"  r="0.9" opacity="0.60"/>
+    <circle cx="230"  cy="30"  r="1.1" opacity="0.75"/>
+    <circle cx="320"  cy="120" r="0.8" opacity="0.50"/>
+    <circle cx="410"  cy="55"  r="1.3" opacity="0.85"/>
+    <circle cx="500"  cy="150" r="0.9" opacity="0.55"/>
+    <circle cx="585"  cy="25"  r="1.0" opacity="0.70"/>
+    <circle cx="670"  cy="105" r="0.8" opacity="0.45"/>
+    <circle cx="760"  cy="60"  r="1.2" opacity="0.80"/>
+    <circle cx="850"  cy="140" r="0.9" opacity="0.50"/>
+    <circle cx="930"  cy="35"  r="1.1" opacity="0.70"/>
+    <circle cx="1020" cy="115" r="0.8" opacity="0.45"/>
+    <circle cx="1105" cy="70"  r="1.3" opacity="0.85"/>
+    <circle cx="1190" cy="155" r="0.9" opacity="0.55"/>
+    <circle cx="1275" cy="40"  r="1.0" opacity="0.70"/>
+    <circle cx="1360" cy="120" r="0.8" opacity="0.50"/>
+    <circle cx="1450" cy="65"  r="1.2" opacity="0.80"/>
+    <circle cx="1540" cy="145" r="0.9" opacity="0.55"/>
+    <circle cx="95"   cy="190" r="0.7" opacity="0.40"/>
+    <circle cx="200"  cy="240" r="0.9" opacity="0.50"/>
+    <circle cx="300"  cy="195" r="0.7" opacity="0.35"/>
+    <circle cx="430"  cy="255" r="0.8" opacity="0.45"/>
+    <circle cx="530"  cy="205" r="0.7" opacity="0.40"/>
+    <circle cx="640"  cy="270" r="0.9" opacity="0.50"/>
+    <circle cx="720"  cy="200" r="0.7" opacity="0.35"/>
+    <circle cx="880"  cy="250" r="0.8" opacity="0.45"/>
+    <circle cx="990"  cy="195" r="0.7" opacity="0.40"/>
+    <circle cx="1090" cy="260" r="0.9" opacity="0.50"/>
+    <circle cx="1180" cy="205" r="0.7" opacity="0.35"/>
+    <circle cx="1300" cy="255" r="0.8" opacity="0.45"/>
+    <circle cx="1420" cy="200" r="0.7" opacity="0.40"/>
+    <circle cx="1520" cy="250" r="0.8" opacity="0.45"/>
+    <circle cx="270"  cy="320" r="0.7" opacity="0.30"/>
+    <circle cx="480"  cy="340" r="0.6" opacity="0.28"/>
+    <circle cx="700"  cy="315" r="0.7" opacity="0.30"/>
+    <circle cx="950"  cy="335" r="0.6" opacity="0.28"/>
+    <circle cx="1150" cy="320" r="0.7" opacity="0.30"/>
+    <circle cx="1380" cy="340" r="0.6" opacity="0.28"/>
+    <circle cx="1550" cy="330" r="0.7" opacity="0.30"/>
+  </g>
+  <g opacity="0.85">
+    <circle cx="410"  cy="55"  r="9" fill="url(#starGlow)"/>
+    <circle cx="760"  cy="60"  r="7" fill="url(#starGlow)"/>
+    <circle cx="1105" cy="70"  r="8" fill="url(#starGlow)"/>
+    <circle cx="1450" cy="65"  r="7" fill="url(#starGlow)"/>
+    <circle cx="585"  cy="25"  r="6" fill="url(#starGlow)"/>
+  </g>
+
+  <!-- ==================== SUN GLOW ==================== -->
+  <ellipse cx="800" cy="660" rx="1010" ry="430" fill="url(#hazeWide)"/>
+
+  <!-- light rays -->
+  <g filter="url(#blurL)" stroke-linecap="round" opacity="0.55">
+    <line x1="800" y1="648" x2="430"  y2="-120" stroke="#ffcf90" stroke-width="54" opacity="0.10"/>
+    <line x1="800" y1="648" x2="700"  y2="-170" stroke="#ffdca8" stroke-width="40" opacity="0.09"/>
+    <line x1="800" y1="648" x2="900"  y2="-170" stroke="#ffdca8" stroke-width="40" opacity="0.09"/>
+    <line x1="800" y1="648" x2="1170" y2="-120" stroke="#ffcf90" stroke-width="54" opacity="0.10"/>
+    <line x1="800" y1="648" x2="120"  y2="200"  stroke="#ffb877" stroke-width="74" opacity="0.07"/>
+    <line x1="800" y1="648" x2="1480" y2="200"  stroke="#ffb877" stroke-width="74" opacity="0.07"/>
+  </g>
+
+  <circle cx="800" cy="648" r="300" fill="url(#hazeCore)"/>
+
+  <!-- horizon light streaks -->
+  <g filter="url(#blurL)" opacity="0.55">
+    <ellipse cx="800" cy="672" rx="720" ry="10" fill="#ffd79a" opacity="0.38"/>
+    <ellipse cx="800" cy="700" rx="920" ry="17" fill="#ffbe7a" opacity="0.32"/>
+    <ellipse cx="800" cy="626" rx="520" ry="7"  fill="#fff0cc" opacity="0.26"/>
+  </g>
+
+  <!-- sun disc -->
+  <circle cx="800" cy="648" r="68" fill="url(#sunCore)"/>
+  <circle cx="800" cy="648" r="44" fill="#fff7dd" opacity="0.85"/>
+  <circle cx="800" cy="648" r="22" fill="#fffdf2" opacity="0.95"/>
+
+  <!-- ==================== BIRDS ==================== -->
+  <g fill="none" stroke="#1a0512" stroke-width="2.4" stroke-linecap="round" opacity="0.8">
+    <path d="M-11,0 Q-5,-8 0,-2 Q5,-8 11,0" transform="translate(962,332)"/>
+    <path d="M-9,0  Q-4,-6 0,-1 Q4,-6 9,0"   transform="translate(1006,306) scale(0.85)"/>
+    <path d="M-11,0 Q-5,-8 0,-2 Q5,-8 11,0" transform="translate(1048,338) scale(0.95)"/>
+    <path d="M-9,0  Q-4,-6 0,-1 Q4,-6 9,0"   transform="translate(1085,300) scale(0.75)"/>
+    <path d="M-9,0  Q-4,-6 0,-1 Q4,-6 9,0"   transform="translate(1112,326) scale(0.7)"/>
+  </g>
+
+  <!-- ==================== FAR PYRAMIDS ==================== -->
+  <g opacity="0.94">
+    <!-- left secondary -->
+    <polygon points="470,415 355,712 462,712" fill="url(#pyrFarA)"/>
+    <polygon points="470,415 462,712 600,712" fill="url(#pyrFarB)"/>
+    <!-- right secondary -->
+    <polygon points="1130,415 1000,712 1138,712" fill="url(#pyrFarB)"/>
+    <polygon points="1130,415 1138,712 1245,712" fill="url(#pyrFarA)"/>
+  </g>
+
+  <!-- ==================== NEAR PYRAMIDS ==================== -->
+  <g>
+    <!-- left main -->
+    <polygon points="240,300 15,712 226,712" fill="url(#pyrNearA)"/>
+    <polygon points="240,300 226,712 487,712" fill="url(#pyrNearB)"/>
+    <path d="M240,300 L226,712" stroke="#ffa05c" stroke-width="2.4" fill="none" opacity="0.34" filter="url(#blurS)"/>
+    <!-- right main -->
+    <polygon points="1360,300 1113,712 1374,712" fill="url(#pyrNearB)"/>
+    <polygon points="1360,300 1374,712 1585,712" fill="url(#pyrNearA)"/>
+    <path d="M1360,300 L1374,712" stroke="#ffa05c" stroke-width="2.4" fill="none" opacity="0.34" filter="url(#blurS)"/>
+  </g>
+
+  <!-- horizon haze band -->
+  <rect x="0" y="646" width="1600" height="90" fill="#ffb878" opacity="0.13" filter="url(#blurL)"/>
+
+  <!-- ==================== OBELISKS ==================== -->
+  <g>
+    <polygon points="155,716 170,524 190,524 205,716" fill="url(#ruinG)"/>
+    <polygon points="170,524 180,486 190,524" fill="url(#goldTip)" opacity="0.9"/>
+    <circle cx="180" cy="492" r="16" fill="#f0c24e" opacity="0.20" filter="url(#blurM)"/>
+    <polygon points="1395,716 1410,524 1430,524 1445,716" fill="url(#ruinG)"/>
+    <polygon points="1410,524 1420,486 1430,524" fill="url(#goldTip)" opacity="0.9"/>
+    <circle cx="1420" cy="492" r="16" fill="#f0c24e" opacity="0.20" filter="url(#blurM)"/>
+  </g>
+
+  <!-- small broken columns flanking -->
+  <g fill="url(#ruinG)">
+    <rect x="250" y="650" width="24" height="66"/>
+    <rect x="300" y="670" width="22" height="46"/>
+    <rect x="206" y="682" width="20" height="34"/>
+    <rect x="1330" y="650" width="24" height="66"/>
+    <rect x="1285" y="670" width="22" height="46"/>
+    <rect x="1372" y="682" width="20" height="34"/>
+  </g>
+
+  <!-- ==================== CENTRAL RUINS ==================== -->
+  <g fill="url(#ruinG)">
+    <!-- left colonnade -->
+    <rect x="522" y="622" width="28" height="94"/>
+    <rect x="580" y="606" width="28" height="110"/>
+    <rect x="638" y="606" width="28" height="110"/>
+    <rect x="696" y="622" width="28" height="94"/>
+    <!-- right colonnade -->
+    <rect x="890" y="622" width="28" height="94"/>
+    <rect x="948" y="606" width="28" height="110"/>
+    <rect x="1006" y="606" width="28" height="110"/>
+    <rect x="1064" y="622" width="28" height="94"/>
+
+    <!-- capitals -->
+    <rect x="517" y="618" width="38" height="10"/>
+    <rect x="575" y="602" width="38" height="10"/>
+    <rect x="633" y="602" width="38" height="10"/>
+    <rect x="691" y="618" width="38" height="10"/>
+    <rect x="885" y="618" width="38" height="10"/>
+    <rect x="943" y="602" width="38" height="10"/>
+    <rect x="1001" y="602" width="38" height="10"/>
+    <rect x="1059" y="618" width="38" height="10"/>
+
+    <!-- bases -->
+    <rect x="517" y="706" width="38" height="10"/>
+    <rect x="575" y="706" width="38" height="10"/>
+    <rect x="633" y="706" width="38" height="10"/>
+    <rect x="691" y="706" width="38" height="10"/>
+    <rect x="885" y="706" width="38" height="10"/>
+    <rect x="943" y="706" width="38" height="10"/>
+    <rect x="1001" y="706" width="38" height="10"/>
+    <rect x="1059" y="706" width="38" height="10"/>
+
+    <!-- broken architraves -->
+    <polygon points="572,608 572,586 600,580 640,584 671,578 671,608"/>
+    <polygon points="926,608 926,578 957,584 997,580 1044,586 1044,608"/>
+
+    <!-- fallen drum -->
+    <rect x="360" y="694" width="86" height="20" rx="9"/>
+    <rect x="1180" y="698" width="70" height="17" rx="8"/>
+  </g>
+
+  <!-- rim light on ruins (sun-facing edges) -->
+  <g stroke="#ffab63" stroke-width="1.8" fill="none" opacity="0.35" filter="url(#blurS)">
+    <path d="M710,622 L710,706"/>
+    <path d="M1064,622 L1064,706"/>
+    <path d="M671,578 L671,608"/>
+    <path d="M926,578 L926,608"/>
+  </g>
+
+  <!-- ==================== DUNES ==================== -->
+  <path d="M0,706 C180,690 340,700 520,708 C700,716 880,696 1080,702 C1260,708 1440,694 1600,702 L1600,900 L0,900 Z" fill="url(#dune1G)"/>
+  <path d="M0,706 C180,690 340,700 520,708 C700,716 880,696 1080,702 C1260,708 1440,694 1600,702"
+        fill="none" stroke="#ff9c5c" stroke-width="3" opacity="0.30" filter="url(#blurS)"/>
+
+  <path d="M0,772 C220,742 420,758 660,772 C900,786 1160,748 1380,764 C1480,771 1550,766 1600,770 L1600,900 L0,900 Z" fill="url(#dune2G)"/>
+  <path d="M0,772 C220,742 420,758 660,772 C900,786 1160,748 1380,764 C1480,771 1550,766 1600,770"
+        fill="none" stroke="#e0794a" stroke-width="2.5" opacity="0.20" filter="url(#blurS)"/>
+
+  <!-- ==================== PALMS ==================== -->
+  <use href="#palm" transform="translate(150,900) scale(1.05)"/>
+  <use href="#palm" transform="translate(268,884) scale(0.68)"/>
+  <use href="#palm" transform="translate(1450,905) scale(-1.0,1.0)"/>
+  <use href="#palm" transform="translate(1560,886) scale(-0.72,0.72)"/>
+
+  <path d="M0,844 C260,812 520,836 800,846 C1080,856 1320,820 1600,838 L1600,900 L0,900 Z" fill="url(#dune3G)"/>
+  <path d="M0,844 C260,812 520,836 800,846 C1080,856 1320,820 1600,838"
+        fill="none" stroke="#b8563a" stroke-width="2.2" opacity="0.16" filter="url(#blurS)"/>
+
+  <!-- ==================== FOREGROUND DETAILS ==================== -->
+  <g fill="#04000a">
+    <!-- rocks -->
+    <ellipse cx="380"  cy="874" rx="58" ry="13"/>
+    <ellipse cx="380"  cy="869" rx="42" ry="9" fill="#0c0412"/>
+    <ellipse cx="1210" cy="884" rx="72" ry="15"/>
+    <ellipse cx="1210" cy="879" rx="52" ry="10" fill="#0c0412"/>
+
+    <!-- grass tufts -->
+    <path d="M600,876 Q604,856 610,846 Q610,862 614,876 Z"/>
+    <path d="M604,876 Q598,858 588,850 Q596,864 598,876 Z"/>
+    <path d="M610,876 Q616,860 626,852 Q618,866 616,876 Z"/>
+
+    <path d="M980,882 Q984,862 990,852 Q990,868 994,882 Z"/>
+    <path d="M984,882 Q978,864 968,856 Q976,870 978,882 Z"/>
+    <path d="M990,882 Q996,866 1006,858 Q998,872 996,882 Z"/>
+
+    <path d="M760,894 Q764,876 770,866 Q770,882 774,894 Z"/>
+    <path d="M764,894 Q758,878 748,870 Q756,884 758,894 Z"/>
+  </g>
+
+  <!-- ==================== VIGNETTE + GRAIN ==================== -->
+  <rect width="1600" height="900" fill="url(#vig)"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.28"/>
+</svg>

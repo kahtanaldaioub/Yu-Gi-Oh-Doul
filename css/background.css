@@ -1,0 +1,31 @@
+/* ===== ANIMATED BACKGROUND ===== */
+.bg-scene{
+  position:fixed;inset:0;width:100%;height:100%;
+  z-index:0;pointer-events:none;overflow:hidden;
+}
+.bg-scene img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:saturate(1.05) contrast(1.05);
+}
+.bg-particles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.bg-particles span{
+  position:absolute;width:3px;height:3px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,220,150,1), rgba(255,180,80,0) 70%);
+  box-shadow:0 0 8px rgba(255,200,120,.8);
+  animation:floatUp 14s linear infinite;
+}
+.bg-particles span:nth-child(1){left:5%;animation-delay:0s;animation-duration:16s}
+.bg-particles span:nth-child(2){left:14%;animation-delay:2s;animation-duration:19s}
+.bg-particles span:nth-child(3){left:23%;animation-delay:5s;animation-duration:14s}
+.bg-particles span:nth-child(4){left:33%;animation-delay:1s;animation-duration:18s}
+.bg-particles span:nth-child(5){left:44%;animation-delay:7s;animation-duration:15s}
+.bg-particles span:nth-child(6){left:56%;animation-delay:3s;animation-duration:17s}
+.bg-particles span:nth-child(7){left:66%;animation-delay:9s;animation-duration:20s}
+.bg-particles span:nth-child(8){left:77%;animation-delay:4s;animation-duration:15s}
+.bg-particles span:nth-child(9){left:86%;animation-delay:6s;animation-duration:18s}
+.bg-particles span:nth-child(10){left:94%;animation-delay:8s;animation-duration:16s}
+@keyframes floatUp{
+  0%{transform:translateY(105vh) translateX(0);opacity:0}
+  10%{opacity:1}90%{opacity:.8}
+  100%{transform:translateY(-10vh) translateX(30px);opacity:0}
+}
