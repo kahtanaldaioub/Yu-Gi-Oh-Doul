@@ -5,7 +5,8 @@
 @media (max-width:1000px){
   #duelScreen{padding:6px;gap:6px}
   .duel-side{flex:0 0 160px}
-  .side-panel{padding:10px;gap:6px}
+  #deckBuilder .db-section{max-height:none!important;min-height:0;padding:14px}
+  #deckBuilder .db-wrap > .db-section:nth-child(3){flex:0 0 auto}
   .side-panel .avatar{width:44px;height:44px}
   .side-panel .lp-num{font-size:1.1rem}
   .monster-slot{min-height:130px}
@@ -118,10 +119,10 @@
   .screen{position:fixed;padding:14px 12px 82px;overflow-y:auto;overscroll-behavior-y:contain}
 
   /* Duel: two compact status rails, one stable battlefield, then the hand. */
-  #duelScreen{position:relative;display:none;min-height:100dvh;height:100dvh;padding:6px 8px 82px;overflow-y:auto}
+  #duelScreen{position:relative;display:none;min-height:100dvh;height:100dvh;padding:8px 10px 82px;overflow-y:auto}
   #duelScreen.active{display:flex}
   #duelScreen .duel-side{width:100%;flex:0 0 auto;height:auto;min-height:0}
-  #duelScreen .side-panel{width:100%;min-height:38px;height:38px;padding:5px 8px;gap:7px;border-radius:10px;overflow:hidden}
+  #duelScreen .side-panel{width:100%;min-height:40px;height:40px;padding:6px 10px;gap:8px;border-radius:10px;overflow:hidden}
   #duelScreen .side-panel .avatar{width:27px;height:27px;flex:0 0 27px}
   #duelScreen .side-panel .lp-name{font-size:.53rem;letter-spacing:1px;flex:0 0 auto}
   #duelScreen .side-panel .lp-num{font-size:.86rem;min-width:48px;flex:0 0 auto}
@@ -132,7 +133,7 @@
   #duelScreen .side-panel .gy-badge .gy-icon{width:14px;height:14px}
   #duelScreen .side-panel .gy-badge .gy-label{font-size:.45rem}
   #duelScreen .side-panel .gy-badge .gy-count{font-size:.7rem}
-  #duelScreen .duel-main{width:100%;height:auto;flex:0 0 auto;min-height:0}
+  #duelScreen .duel-main{width:100%;height:auto;flex:0 0 auto;min-height:0;gap:7px}
   #duelScreen #field{width:100%;height:316px;min-height:316px;flex:0 0 316px}
   #duelScreen .zone{padding:19px 5px 6px;border-radius:10px}
   #duelScreen .zone-label{top:4px;left:9px;font-size:.5rem;letter-spacing:1.6px}
@@ -141,17 +142,17 @@
   #duelScreen .card{width:min(23vw,84px);height:auto;aspect-ratio:108/156;padding:3px}
   #duelScreen #statusWrap{min-height:28px}
   #duelScreen #status{max-width:92%;font-size:.62rem;padding:4px 12px}
-  #duelScreen #handArea{min-height:126px;height:126px;padding:4px 6px;border-radius:10px}
+  #duelScreen #handArea{min-height:126px;height:126px;padding:6px 8px;border-radius:10px}
   #duelScreen #handCards{justify-content:flex-start;gap:4px;padding:14px 3px 2px}
   #duelScreen .card.hand{width:min(19vw,76px);height:auto;aspect-ratio:92/134;padding:3px}
-  #duelScreen #controls{min-height:40px;padding:0 2px}
+  #duelScreen #controls{min-height:40px;padding:0 4px}
 
   /* Deck builder and packs scroll as pages, never as clipped desktop canvases. */
   #deckBuilder,#packScreen{position:fixed;display:none;height:100dvh;min-height:100dvh;overflow-y:auto;overflow-x:hidden}
   #deckBuilder.active,#packScreen.active{display:flex}
   #deckBuilder{padding:14px 10px 82px}
   #deckBuilder .db-wrap,.pack-wrap{height:auto;min-height:0;max-width:none;gap:10px}
-  #deckBuilder .db-section{max-height:none!important;min-height:0;padding:12px}
+  #deckBuilder .db-section{max-height:none!important;min-height:0;padding:14px}
   #deckBuilder .db-wrap > .db-section:nth-child(3){flex:0 0 auto}
   #deckBuilder .db-wrap > .db-section:nth-child(3) #collectionGrid{max-height:none;overflow:visible}
   #deckBuilder .db-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px}
@@ -171,13 +172,13 @@
 
   #packScreen{padding:14px 10px 82px}
   #packScreen .pack-wrap{width:100%}
-  #packScreen #packCards{min-height:0;padding:16px 8px;gap:10px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  #packScreen #packCards{min-height:0;padding:18px 10px;gap:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
   #packScreen .pack-card-slot{width:100%;height:auto;aspect-ratio:120/175}
   #packScreen .pack-intro{font-size:.78rem;padding:3px 8px}
 
   /* Menu panel fits narrow phones without shrinking the primary actions. */
   #mainMenu{padding:14px 10px 82px}
-  #mainMenu .menu-panel{width:100%;max-width:430px;padding:28px 20px 22px}
+  #mainMenu .menu-panel{width:100%;max-width:430px;padding:30px 22px 24px}
   #mainMenu .menu-emblem{width:68px;height:68px;margin-bottom:8px}
   #mainMenu .menu-title{font-size:1.45rem;letter-spacing:4px}
   #mainMenu .menu-sub{font-size:.72rem;margin-bottom:18px}
@@ -198,6 +199,7 @@
   #duelScreen .side-panel .lp-num{font-size:.74rem;min-width:42px}
   #duelScreen .side-panel .gy-badge .gy-label{display:none}
   #deckBuilder #collectionGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  #deckBuilder .db-section{padding:12px}
   #deckBuilder .deck-topbar{grid-template-columns:1fr;gap:7px}
   #deckBuilder .deck-topbar .top-title{justify-content:center}
   #deckBuilder .deck-topbar .top-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}

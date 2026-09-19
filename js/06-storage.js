@@ -6,7 +6,10 @@ let loadedResetGeneration = null;
 function loadSave(){
   try{
     loadedResetGeneration = localStorage.getItem(RESET_KEY);
-    const raw = JSON.parse(localStorage.getItem(SAVE_KEY) || '{}');
+    const stored = JSON.parse(localStorage.getItem(SAVE_KEY) || '{}');
+    const raw = loadedResetGeneration && stored.resetGeneration !== loadedResetGeneration
+      ? {}
+      : stored;
     const settings = {
       masterVolume: 0.5,
       sfxVolume: 0.85,
@@ -29,6 +32,7 @@ function loadSave(){
       starterInitialized: raw.starterInitialized === true,
       starterDeckSize: typeof raw.starterDeckSize === 'number' ? raw.starterDeckSize : 0,
       starterDeckComplete: raw.starterDeckComplete === true,
+      resetGeneration: loadedResetGeneration,
       settings
     };
   }catch(e){
@@ -41,6 +45,7 @@ function loadSave(){
       starterInitialized:false,
       starterDeckSize:0,
       starterDeckComplete:false,
+      resetGeneration: loadedResetGeneration,
       settings: {
         masterVolume: 0.5,
         sfxVolume: 0.85,
@@ -62,6 +67,7 @@ function saveGame(){
     if (!save) return;
     if (loadedResetGeneration !== localStorage.getItem(RESET_KEY)) return;
     save.settings = { ...(save.settings || {}), ...settings };
+    save.resetGeneration = loadedResetGeneration;
     localStorage.setItem(SAVE_KEY, JSON.stringify(save));
   } catch(e){}
 }
